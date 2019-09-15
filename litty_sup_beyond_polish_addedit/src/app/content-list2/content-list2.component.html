@@ -1,0 +1,9 @@
+
+
+<div *ngFor="let datasx of datasx | async" style="width: 300px;">
+  <datasx-detail [datasx]='datasx'></datasx-detail>
+</div>
+
+<div>
+  <button type="button" class="button btn-danger" (click)='deleteDatasx()'>Delete All Datas</button>
+</div>

@@ -1,0 +1,35 @@
+
+
+<li>
+  ข้างล่างเป็น list
+</li>
+
+
+<li style="list-style-type: none" *ngFor="let datas of datas; let i = index;">{{i+1}}. {{datas}}</li>
+
+<li style="list-style-type: none" *ngFor="let data of datas; let i = index;">
+  <button *ngIf="isDeleteable == true" class="btn btn-danger" (click)="removeData(data)"> X </button> 
+  
+  <div *ngIf="isEditable == true">
+  <input type="text" [(ngModel)]="datas">
+</div>
+</li>
+
+<form (submit)="addData(data.value)">
+    <div>
+      <label for="data">Add Data:<br><button type="button" class="btn btn-primary">เพิ่ม (กด Enter นะ)</button></label>
+      &nbsp;
+      <input type="text" #data placeholder= "Add data">
+    </div>
+  </form>
+
+<br>
+
+<button (click)=toggleDelete() type="button" class="btn btn-primary" data-toggle="modal" >
+  ลบ
+</button>
+
+<button (click)=toggleEdit() type="button" class="btn btn-primary" data-toggle="modal">
+  แก้ไข
+</button>
+  

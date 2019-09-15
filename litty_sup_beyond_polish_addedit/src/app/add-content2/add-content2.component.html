@@ -1,0 +1,16 @@
+
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name" ><h2>Add New Data</h2></label>
+      <input type="text" class="form-control" id="datasx" required [(ngModel)]="datasx.datasx" name="datasx">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newDatasx()">Add</button>
+</div>

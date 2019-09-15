@@ -1,0 +1,24 @@
+<div *ngIf="datasx">
+  <div>
+    <label>  <li></li></label> {{datasx.datasx}}
+  </div>
+  
+  
+  <form (submit)="updateDatasx()">
+    <div>
+      
+      
+      <input type="text" id="datasx" required [(ngModel)]="datasx.datasx" name="datasx" #data placeholder= "--edit--">&nbsp;
+      <label for="data"><button type="button" class="btn btn-primary">Edit Data</button></label>
+    </div>
+  </form>
+
+
+
+
+
+
+  <span class="button is-small btn-danger" (click)='deleteDatasx()'>Delete Data</span>
+
+  <hr/>
+</div>
