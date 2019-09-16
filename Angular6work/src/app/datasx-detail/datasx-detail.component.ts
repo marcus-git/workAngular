@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DatasxService } from '../datasx.service';
 import { Datasx } from '../datasx';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { ContentList2Component } from '../content-list2/content-list2.component';
 
@@ -34,7 +36,7 @@ export class DatasxDetailComponent implements OnInit {
   
 
   updatedatasx2() {
-    this.datasxService.updateDatasx2(this.datasx)
+    this.datasxService.updateDatasx2(this.datasx.datasx)
       .subscribe(datasx => console.log(datasx), error => console.log(error));
     this.datasx = new Datasx();
   }
@@ -55,7 +57,7 @@ export class DatasxDetailComponent implements OnInit {
         error => console.log(error));
   }
   
-
+  
 
   
 }

@@ -89,11 +89,15 @@ public class DatasxController {
 //  }
   ///////////////////
   
-  //Holder*delete if failed
-  @PutMapping(value="/datasx/")
+  //Holder*delete all below if failed
+  @PutMapping(value="/datasx/{id}")
 	public void putDatasx(@RequestBody Datasx datasx){
 	  System.out.println("Editing Stuff...");
-		repository.save(datasx);
+	  
+	  repository.save(datasx);
 	}
+  
+ 
+
   
 }

@@ -8,4 +8,6 @@ import com.example.testproject.model.Datasx;
  
 public interface DatasxRepository extends CrudRepository<Datasx, Long> {
   
+	
+	
 }

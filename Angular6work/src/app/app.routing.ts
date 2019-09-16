@@ -14,6 +14,8 @@ import { AddContentComponent } from './add-content/add-content.component';
 
 
 
+
+
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'content-list', component: ContentListComponent },
@@ -24,6 +26,7 @@ const appRoutes: Routes = [
     { path: 'content-list', component: ContentListComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
+    
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

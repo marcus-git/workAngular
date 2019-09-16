@@ -30,6 +30,7 @@ import { DatasxDetailComponent } from './datasx-detail/datasx-detail.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { DatasxDetailComponent } from './datasx-detail/datasx-detail.component';
     AddContent2Component,
     ContentList2Component,
     DatasxDetailComponent,
+   
    
     
   ],
