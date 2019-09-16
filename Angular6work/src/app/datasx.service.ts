@@ -36,6 +36,9 @@ export class DatasxService {
     return this.http.get(`${this.baseUrl}`);
   }
 
+  updateDatasxF( datasx: Object ): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/${datasx}`, datasx, );
+  }
 
   deleteAll(): Observable<any> {
     return this.http.delete(`${this.baseUrl}` + `/delete`, { responseType: 'text' });

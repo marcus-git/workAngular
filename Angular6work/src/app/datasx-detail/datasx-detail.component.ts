@@ -47,10 +47,8 @@ export class DatasxDetailComponent implements OnInit {
 
 
   updateIT() {
-    this.datasxService.updateDatasx(this.datasx.id,
-      { datasx: this.datasx.datasx})
-      .subscribe(
-        data => {
+    this.datasxService.updateDatasxF(this.datasx.datasx)
+      .subscribe(data => {
           console.log(data);
           this.datasx = data as Datasx;
         },

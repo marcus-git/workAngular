@@ -3,7 +3,12 @@ package com.example.testproject.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
- 
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
  
 import com.example.testproject.model.Datasx;
 import com.example.testproject.repo.DatasxRepository;
+
+
  
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -64,19 +71,29 @@ public class DatasxController {
   }
  
  
-  @PutMapping("/datasx/{id}")
-  public ResponseEntity<Datasx> updateDatasx(@PathVariable("id") long id, @RequestBody Datasx datasx) {
-    System.out.println("Update Data with ID = " + id + "...");
+  ///////////////////
+  //@PutMapping("/datasx/{id}")
+ // public ResponseEntity<Datasx> updateDatasx(@PathVariable("id") long id, @RequestBody Datasx datasx) {
+   // System.out.println("Update Data with ID = " + id + "...");
+
+   // Optional<Datasx> datasxDatasx = repository.findById(id);
  
-    Optional<Datasx> datasxDatasx = repository.findById(id);
- 
-    if (datasxDatasx.isPresent()) {
-      Datasx _datasx = datasxDatasx.get();
-      _datasx.setDatasx(datasx.getDatasx());
+   // if (datasxDatasx.isPresent()) {
+    //  Datasx _datasx = datasxDatasx.get();
+    //  _datasx.setDatasx(datasx.getDatasx());
       
-      return new ResponseEntity<>(repository.save(_datasx), HttpStatus.OK);
-    } else {
-      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-  }
+   //   return new ResponseEntity<>(repository.save(_datasx), HttpStatus.OK);
+   // } else {
+     // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+   // }
+//  }
+  ///////////////////
+  
+  //Holder*delete if failed
+  @PutMapping(value="/datasx/")
+	public void putDatasx(@RequestBody Datasx datasx){
+	  System.out.println("Editing Stuff...");
+		repository.save(datasx);
+	}
+  
 }

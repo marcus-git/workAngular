@@ -40,10 +40,13 @@ public class Datasx {
   public String getDatasx() {
     return this.datasx;
   }
+  
  
  
   @Override
   public String toString() {
     return "Datasx [id=" + id + ", datasx=" + datasx + "]";
+    
+  
   }
 }
